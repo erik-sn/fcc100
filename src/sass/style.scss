@@ -1,24 +1,39 @@
 
 @mixin center() {
-  position: absolute !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  margin: auto !important;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 @mixin column() {
   display: inline-block;
   padding: 5px;
-  width: 150px;
 }
 
-#user-list {
+#app-container {
   @include center();
-  width: 750px;
-  height: 500px;
-  overflow-y: auto;
+  width: 75%;
+  margin-top: 10%;
+  min-width: 440px;
+}
+
+#user-list-container {
+  height: 600px !important;
+  overflow: auto !important;
+}
+
+.row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+#header {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 600px;
 }
 
 .user-list-header {
@@ -26,7 +41,12 @@
   font-weight: bold !important;
 }
 
-#user-list-container {
+#user-list-item {
+  width: 600px;
+}
+
+#user-list {  
+  overflow: auto;
 }
 
 .user-list-field {

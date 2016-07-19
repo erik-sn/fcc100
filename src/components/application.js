@@ -19,6 +19,18 @@ export default class Application extends Component {
     .then((response) => this.setState({ users: response.data }));
   }
 
+  // sortUsers(function) {
+  //   const { users } = this.state;
+  //   const results = users.sort(function).map((user, index) => (
+  //     <div key={index} className="user-list-item row">
+  //       <div className="user-list-field col-xs-4" >{user.username}</div>
+  //       <div className="user-list-field col-xs-2" >{user.alltime}</div>
+  //       <div className="user-list-field col-xs-2" >{user.recent}</div>
+  //       <div className="user-list-field col-xs-4" >{user.lastUpdate.substring(0, 10)}</div>
+  //     </div>
+  //   ));
+  // }
+
   render() {
     const { users } = this.state;
     if (!users) {
@@ -27,24 +39,23 @@ export default class Application extends Component {
 
     const userList = users.map((user, index) => (
       <div key={index} className="user-list-item row">
-        <div className="user-list-field col-xs-2" >{user.username}</div>
-        <div className="user-list-field col-xs-1" >{user.alltime}</div>
-        <div className="user-list-field col-xs-1" >{user.recent}</div>
-        <div className="user-list-field col-xs-2" >{user.lastUpdate.substring(0, 10)}</div>
+        <div className="user-list-field col-xs-4" >{user.username}</div>
+        <div className="user-list-field col-xs-2" >{user.alltime}</div>
+        <div className="user-list-field col-xs-2" >{user.recent}</div>
+        <div className="user-list-field col-xs-4" >{user.lastUpdate.substring(0, 10)}</div>
       </div>
     ));
 
     return (
-      <div id="app-container">
-        
-        <div id="header" className="row">
-          <div className="user-list-header col-xs-2" >Username</div>
-          <div className="user-list-header col-xs-1" >Alltime</div>
-          <div className="user-list-header col-xs-1" >Recent</div>
-          <div className="user-list-header col-xs-2" >Updated</div>
-        </div>
+      <div id="app-container container">
         <div id="user-list">
-          <div id="user-list-constainer" >
+          <div id="header" className="row">
+            <div className="user-list-header col-xs-4" >Username</div>
+            <div className="user-list-header col-xs-2" >Alltime</div>
+            <div className="user-list-header col-xs-2" >Recent</div>
+            <div className="user-list-header col-xs-4" >Updated</div>
+          </div>
+          <div id="user-list-container" className="container" >
             {userList}
           </div>
         </div>
